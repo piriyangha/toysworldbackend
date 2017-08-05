@@ -12,43 +12,54 @@ import javax.persistence.Table;
 @Table (name="Product")
 public class Product {
 	@Id
-	@GeneratedValue (strategy=GenerationType.AUTO)
-	private int Pid;
-	private String Pname;
-	private float Price;
-	private String Brandname;
+	@GeneratedValue (strategy=GenerationType.SEQUENCE)
+	private int pid;
+	private String pname;
+	private float price;
+	private String brandname;
+	private String stock;
 	
 	public int getPid() {
-		return Pid;
+		return pid;
 	}
-
 	
 	public void setPid(int pid) {
-		Pid = pid;
+		this.pid = pid;
 	}
-
 	
 	public String getPname() {
-		return Pname;
+		return pname;
 	}
-
 	
 	public void setPname(String pname) {
-		Pname = pname;
+		this.pname = pname;
 	}
-
 	
 	public float getPrice() {
-		return Price;
+		return price;
 	}
-
 	
 	public void setPrice(float price) {
-		Price = price;
-	}
-
-	public String getBrandname() {
-		return Brandname;
+		this.price = price;
 	}
 	
+	 
+	public String getBrandname() {
+		return brandname;
+	}
+	
+	public void setBrandname(String brandname) {
+		this.brandname = brandname;
+	}
+	
+	public String getStock() {
+		return stock;
+	}
+	
+	public void setStock(String stock) {
+		this.stock = stock;
+	}
 }
+	
+	
+	

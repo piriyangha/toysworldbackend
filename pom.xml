@@ -27,8 +27,12 @@
     <artifactId>hibernate-core</artifactId>
     <version>5.2.10.Final</version>
 </dependency>
-
-
+           <!-- jstl dependency -->
+<dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<dependency>
