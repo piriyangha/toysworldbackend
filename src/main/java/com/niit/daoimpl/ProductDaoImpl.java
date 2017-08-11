@@ -29,6 +29,10 @@ public class ProductDaoImpl implements ProductDao {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
+	public void updateProduct(Product product)
+	{
+		sessionFactory.getCurrentSession().update(product);
+	}
 	
 	public Product getProductById(int productId) {
 		
