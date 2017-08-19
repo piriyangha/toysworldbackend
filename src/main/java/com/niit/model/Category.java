@@ -1,18 +1,66 @@
 package com.niit.model;
 
+
+
+
+
+import java.util.List;
+
+
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+import org.springframework.stereotype.Component;
+
 @Entity
+@Component
 @Table(name="Category")
 public class Category {
-	@Id
-	@GeneratedValue (strategy=GenerationType.AUTO)
+	 @Id 
+	 @GeneratedValue (strategy=GenerationType.AUTO)
+	 @Column(name="CAT_ID")
 	 private int cid;
 	 private String catname;
+	 @OneToMany(fetch=FetchType.EAGER,targetEntity=Product.class)
+	 private List<Product> product;
+	
+	
+	public List<Product> getProduct() {
+		return product;
+	}
+
+	
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
+	public int getCid() {
+		return cid;
+	}
+	
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+	
+	public String getCatname() {
+		return catname;
+	}
+	
+	public void setCatname(String catname) {
+		this.catname = catname;
+	}
+	
+	
+	 
+	
 	
 	
 	

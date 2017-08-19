@@ -9,11 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
 import com.niit.model.Product;
-@Repository
+@Repository(value="productdao")
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 	@Autowired
 	SessionFactory sessionFactory;
+	
+
 	public void saveProduct(Product product)
 	{
 		sessionFactory.getCurrentSession().save(product);
@@ -24,10 +26,9 @@ public class ProductDaoImpl implements ProductDao {
 		sessionFactory.getCurrentSession().delete(getProductById(productId));
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<Product> getAllProducts() {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product").list();
+		return sessionFactory.getCurrentSession().createQuery("from Product", Product.class).list();
 	}
 	public void updateProduct(Product product)
 	{
@@ -36,7 +37,7 @@ public class ProductDaoImpl implements ProductDao {
 	
 	public Product getProductById(int productId) {
 		
-		return (Product)sessionFactory.getCurrentSession().get(Product.class, productId);
+		return (Product)sessionFactory.getCurrentSession().get(Product.class, productId);// ( fetch the pid from (product.class) refers to the product class file)
 	}
 	
 }
