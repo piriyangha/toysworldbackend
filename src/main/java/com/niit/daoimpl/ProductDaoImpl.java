@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
 import com.niit.model.Product;
-@Repository(value="productdao")
+@Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 	@Autowired
@@ -28,7 +28,7 @@ public class ProductDaoImpl implements ProductDao {
 	
 	public List<Product> getAllProducts() {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product", Product.class).list();
+		return sessionFactory.getCurrentSession().createQuery("FROM Product", Product.class).list();
 	}
 	public void updateProduct(Product product)
 	{

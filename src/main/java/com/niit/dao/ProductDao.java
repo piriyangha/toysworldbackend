@@ -11,8 +11,5 @@ public interface ProductDao {
 	public void deleteProduct(Integer productId);//delete particular product
 	public List<Product> getAllProducts();//read all products
 	public void updateProduct(Product product);//update product
-	public Product getProductById(int pid);// read product based on id
-	
-	
-	
+	public Product getProductById(int pid);// read product based on id	
 }

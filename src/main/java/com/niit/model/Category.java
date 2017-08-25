@@ -10,7 +10,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,21 +25,19 @@ import org.springframework.stereotype.Component;
 public class Category {
 	 @Id 
 	 @GeneratedValue (strategy=GenerationType.AUTO)
-	 @Column(name="CAT_ID")
+	 
 	 private int cid;
 	 private String catname;
-	 @OneToMany(fetch=FetchType.EAGER,targetEntity=Product.class)
+	/* @OneToMany(mappedBy="category")
 	 private List<Product> product;
-	
 	
 	public List<Product> getProduct() {
 		return product;
 	}
 
-	
 	public void setProduct(List<Product> product) {
 		this.product = product;
-	}
+	}*/
 
 	public int getCid() {
 		return cid;
@@ -57,12 +54,6 @@ public class Category {
 	public void setCatname(String catname) {
 		this.catname = catname;
 	}
-	
-	
-	 
-	
-	
-	
-	
+		
 
 }

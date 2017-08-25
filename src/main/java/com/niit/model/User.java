@@ -1,9 +1,9 @@
-package com.niit.model;
+ package com.niit.model;
 
     import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
-	import javax.persistence.GenerationType;
-	import javax.persistence.Id;
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+                                 import javax.persistence.Id;
 	import javax.persistence.Table;
 
 	@Entity
@@ -14,7 +14,7 @@ package com.niit.model;
 		private int id;
 		private String username;
 		private String email;
-		private String password;
+		private String password;                                  
 		private String address;
 		private boolean enabled;
 		private String roll;
