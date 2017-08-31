@@ -21,7 +21,7 @@ public class ProductDaoImpl implements ProductDao {
 		sessionFactory.getCurrentSession().save(product);
 	}
 	
-	public void deleteProduct(Integer productId)
+	public void deleteProduct(int productId)
 	{
 		sessionFactory.getCurrentSession().delete(getProductById(productId));
 	}

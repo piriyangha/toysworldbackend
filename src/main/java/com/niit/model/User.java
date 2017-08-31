@@ -6,26 +6,46 @@
                                  import javax.persistence.Id;
 	import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 	@Entity
 	@Table(name = "user")
 	public class User {
 		@Id
 		@GeneratedValue (strategy=GenerationType.AUTO) 
 		private int id;
+		@NotEmpty
 		private String username;
+		@NotEmpty
+		@Email
 		private String email;
-		private String password;                                  
+		@NotEmpty
+		private String password;  
+		@NotEmpty
 		private String address;
 		private boolean enabled;
-		private String roll;
+		private String role;
 		
+		
+
 		public String getEmail() {
 			return email;
 		}
 
-		public void setEmailid(String email) {
+		public void setEmail(String email) {
 			this.email = email;
 		}
+
+		public String getRole() {
+			return role;
+		}
+
+		public void setRole(String role) {
+			this.role = role;
+		}
+
+		
 		
 		public String getUsername() {
 			return username;
