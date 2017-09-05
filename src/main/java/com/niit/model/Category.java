@@ -19,6 +19,7 @@ public class Category {
 	 
 	 private int cid;
 	 private String catname;
+	 
 	/* @OneToMany(mappedBy="category")
 	 private List<Product> product;
 	

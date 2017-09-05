@@ -12,4 +12,5 @@ public interface ProductDao {
 	public List<Product> getAllProducts();//read all products
 	public void updateProduct(Product product);//update product
 	public Product getProductById(int pid);// read product based on id	
+	//public List<Product> getProductByCategoryId(int cid);
 }

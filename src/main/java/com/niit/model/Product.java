@@ -1,6 +1,6 @@
 package com.niit.model;
 
-import javax.persistence.Transient;
+
 
 
 import javax.persistence.Entity;
@@ -11,19 +11,15 @@ import javax.persistence.Id;
 
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
-
-import javax.validation.constraints.NotNull;
-
 import org.springframework.web.multipart.MultipartFile;
 
-
-
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Component
-
 @Entity
 @Table (name="Product")
 public class Product {
@@ -31,18 +27,17 @@ public class Product {
 	@GeneratedValue (strategy=GenerationType.AUTO)
 	
 	private int pid;
-	//@NotNull(message="Name should not be empty")
+	@NotEmpty
 	private String pname;
-	
 	private float price;
+	
 	private String brandname;
 	private String stock;
 	
 	@ManyToOne 
 	private Category category;
 	
-	
-	@Transient
+	/*@Transient
 	private MultipartFile image;
 	
 	public MultipartFile getImage() {
@@ -50,7 +45,8 @@ public class Product {
 	}
 	public void setImage(MultipartFile image) {
 		this.image = image;
-	}
+	}*/
+	
 	public Category getCategory() {
 		return category;
 	}
