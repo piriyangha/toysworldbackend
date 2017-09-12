@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
 import com.niit.model.Product;
+import com.niit.model.User;
 
 @Repository
 @Transactional
@@ -33,25 +34,24 @@ public class ProductDaoImpl implements ProductDao {
 		sessionFactory.getCurrentSession().update(product);
 	}
 
-	public Product getProductById(int productId) {
-
-		return (Product) sessionFactory.getCurrentSession().get(Product.class, productId);// (
-																							// fetch
-																							// the
-																							// pid
-																							// from
-																							// (product.class)
-																							// refers
-																							// to
-																							// the
-																							// product
-																							// class
-																							// file)
+	public Product getProductById(int pid) {
+		return (Product) sessionFactory.getCurrentSession().get(Product.class, pid);
+		
 	}
 
-	/*
-	 * public List<Product> getProductByCategoryId(int category_id) { return
-	 * sessionFactory.getCurrentSession().createQuery(
-	 * "From Product where category_id='category_id'").list(); }
-	 */
+	/*public Product getProductById(int productId) {
+
+		
+	} */
+	public List<Product> getProductByCategoryId(int cid) { 
+		  return sessionFactory.getCurrentSession().createQuery("From Product where cid='cid'",Product.class).list();
+		  }
+
+	public User getUserByUsername(String username) {
+		
+		User user = (User) sessionFactory.getCurrentSession().createQuery("FROM User WHERE username = '"+username+"'").uniqueResult();
+		
+		return user;
+	}
+	 
 }

@@ -2,7 +2,7 @@ package com.niit.dao;
 
 import com.niit.model.User;
 
-public interface userdao {
+public interface UserDao {
 public void saveUser(User user);
 
 }

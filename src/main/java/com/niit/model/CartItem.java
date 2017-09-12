@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -12,25 +13,46 @@ import org.springframework.stereotype.Component;
 public class CartItem {
 	@Id
 	@ GeneratedValue (strategy=GenerationType.AUTO)
-	private int id;
-    private int subQuantity;
-    private float subTotal;
-	public int getId() {
-		return id;
+	private int cartitemid;
+    private int subquantity;
+    private double subtotal;
+    @ManyToOne
+    private Product product;
+    public Product getProduct() {
+		return product;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
-	public int getSubQuantity() {
-		return subQuantity;
+	@ManyToOne
+    private Cart cart;
+	
+	
+	public int getCartitemid() {
+		return cartitemid;
 	}
-	public void setSubQuantity(int subQuantity) {
-		this.subQuantity = subQuantity;
+	public void setCartitemid(int cartitemid) {
+		this.cartitemid = cartitemid;
 	}
-	public float getSubTotal() {
-		return subTotal;
+	public Cart getCart() {
+		return cart;
 	}
-	public void setSubTotal(float subTotal) {
-		this.subTotal = subTotal;
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
+	public int getSubquantity() {
+		return subquantity;
+	}
+	public void setSubquantity(int subquantity) {
+		this.subquantity = subquantity;
+	}
+	public double getSubtotal() {
+		return subtotal;
+	}
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
+	
+	
+	
 }

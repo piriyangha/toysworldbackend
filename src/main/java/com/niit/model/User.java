@@ -4,7 +4,8 @@
     import javax.persistence.GeneratedValue;
     import javax.persistence.GenerationType;
                                  import javax.persistence.Id;
-	import javax.persistence.Table;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -23,11 +24,19 @@ import javax.validation.constraints.NotEmpty;
 		@NotEmpty
 		private String password;  
 		@NotEmpty
-		private String address;
+		private String phone;
 		private boolean enabled;
 		private String role;
+		@OneToOne
+		private Cart cart;
 		
-		
+		public Cart getCart() {
+			return cart;
+		}
+
+		public void setCart(Cart cart) {
+			this.cart = cart;
+		}
 
 		public String getEmail() {
 			return email;
@@ -65,13 +74,13 @@ import javax.validation.constraints.NotEmpty;
 			this.id = id;
 		}
 
-		
-		public String getAddress() {
-			return address;
+
+		public String getPhone() {
+			return phone;
 		}
 
-		public void setAddress(String address) {
-			this.address = address;
+		public void setPhone(String phone) {
+			this.phone = phone;
 		}
 
 		public String getPassword() {
