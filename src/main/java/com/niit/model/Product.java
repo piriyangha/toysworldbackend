@@ -37,7 +37,7 @@ public class Product {
 	@ManyToOne 
 	private Category category;
 	
-	/*@Transient
+	@Transient
 	private MultipartFile image;
 	
 	public MultipartFile getImage() {
@@ -45,7 +45,7 @@ public class Product {
 	}
 	public void setImage(MultipartFile image) {
 		this.image = image;
-	}*/
+	}
 	
 	public Category getCategory() {
 		return category;

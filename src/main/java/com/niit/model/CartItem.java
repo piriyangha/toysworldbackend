@@ -1,10 +1,12 @@
 package com.niit.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import org.springframework.stereotype.Component;
 
@@ -12,11 +14,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class CartItem {
 	@Id
-	@ GeneratedValue (strategy=GenerationType.AUTO)
+	@GeneratedValue (strategy=GenerationType.AUTO)
 	private int cartitemid;
     private int subquantity;
     private double subtotal;
-    @ManyToOne
+    @OneToOne
     private Product product;
     public Product getProduct() {
 		return product;
