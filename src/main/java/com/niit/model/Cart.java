@@ -25,8 +25,8 @@ public class Cart {
 	private double grandTotal;
 	@OneToOne
 	private User user;
-	@OneToOne
-	private BillingAddress billing;
+	/*@OneToOne
+	private BillingAddress billing;*/
 	private int qty;
 
 	public int getQty() {
@@ -51,14 +51,6 @@ public class Cart {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public BillingAddress getBilling() {
-		return billing;
-	}
-
-	public void setBilling(BillingAddress billing) {
-		this.billing = billing;
 	}
 
 	public List<CartItem> getCartItems() {
