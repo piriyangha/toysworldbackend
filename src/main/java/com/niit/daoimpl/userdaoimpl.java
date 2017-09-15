@@ -27,7 +27,14 @@ public class userdaoimpl implements UserDao {
 	}
 
 	public User getUserByUserId(int userId) {
-		
+
 		return sessionFactory.getCurrentSession().get(User.class, userId);
+	}
+
+	public User getUserByUsername(String username) {
+
+		User user = (User) sessionFactory.getCurrentSession().createQuery("FROM User WHERE username = '" + username + "'").uniqueResult();
+
+		return user;
 	}
 }

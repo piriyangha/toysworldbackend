@@ -20,10 +20,20 @@ public class BillingAddress implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int billingid;
 	private String line1;
-	private String line2;
+	private String city;
 	private String state;
 	private String country;
 	private String pincode;
+	
+	
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 
 	public int getBillingid() {
 		return billingid;
@@ -41,13 +51,7 @@ public class BillingAddress implements Serializable {
 		this.line1 = line1;
 	}
 
-	public String getLine2() {
-		return line2;
-	}
-
-	public void setLine2(String line2) {
-		this.line2 = line2;
-	}
+	
 
 	public String getState() {
 		return state;

@@ -5,7 +5,9 @@ import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 
+import com.niit.dao.BillingDao;
 import com.niit.dao.ProductDao;
 import com.niit.dao.UserDao;
 import com.niit.model.BillingAddress;
@@ -23,9 +25,10 @@ public class FlowHandler implements Serializable{
 	@Autowired
 	User user;
 	
-	/**
-	 * 
-	 */
+	@Autowired
+	BillingDao billingDao;
+	
+	
 	private static final long serialVersionUID = 113338062526435128L;
 
 	public BillingAddress initHandler(int userId){
@@ -34,7 +37,10 @@ public class FlowHandler implements Serializable{
 		return new BillingAddress();
 	}
 	
-	public void saveBillAddress(BillingAddress billingAddress){
+	public String saveBillAddress(BillingAddress billingAddress){
 		System.out.println("Billing Address Saved");
+		billingDao.saveOrUpdate(billingAddress);
+		return "thankYou";
+		
 	}
 }

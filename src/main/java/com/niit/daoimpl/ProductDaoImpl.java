@@ -47,11 +47,6 @@ public class ProductDaoImpl implements ProductDao {
 		  return sessionFactory.getCurrentSession().createQuery("From Product where cid='cid'",Product.class).list();
 		  }
 
-	public User getUserByUsername(String username) {
-		
-		User user = (User) sessionFactory.getCurrentSession().createQuery("FROM User WHERE username = '"+username+"'").uniqueResult();
-		
-		return user;
-	}
+	
 	 
 }

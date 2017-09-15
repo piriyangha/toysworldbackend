@@ -13,6 +13,6 @@ public interface ProductDao {
 	public List<Product> getAllProducts();//read all products
 	public void updateProduct(Product product);//update product
 	public Product getProductById(int pid);// returns product object based on id	
-	public User getUserByUsername(String username);
+	
 	public List<Product> getProductByCategoryId(int cid);
 }
